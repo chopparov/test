@@ -1,0 +1,12 @@
+{
+  "name": "starter-fullstack-project",
+  "version": "1.0.0",
+  "description": "A minimal full-stack learning project: HTML/CSS frontend + Express backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

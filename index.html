@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Web Co. — Websites for Bulawayo Businesses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!--
+    SEMANTIC HTML NOTE:
+    Instead of wrapping everything in <div>s, we use tags that describe
+    what the content IS. This helps accessibility tools, search engines,
+    and other developers (including future you) understand the page
+    structure at a glance.
+  -->
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#" class="logo">Local Web Co.</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h1>Websites for Bulawayo businesses that don't have one yet.</h1>
+      <p>Simple, fast, professional sites — built and live within a few days.</p>
+      <a href="#contact" class="btn btn-primary">Get a free quote</a>
+    </section>
+
+    <!-- SERVICES: a CSS GRID layout example -->
+    <section id="services" class="services">
+      <h2>What you get</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>One-page site</h3>
+          <p>Everything a small business needs — hours, menu or services, location, and contact info — on one clean page.</p>
+        </article>
+        <article class="card">
+          <h3>Mobile-friendly</h3>
+          <p>Looks right on a phone, not just a laptop. Most of your customers will find you on mobile first.</p>
+        </article>
+        <article class="card">
+          <h3>Fast turnaround</h3>
+          <p>Built and live within days, not weeks — so you can start benefiting right away.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM: this is what our backend will receive -->
+    <section id="contact" class="contact">
+      <h2>Get in touch</h2>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">What does your business need?</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+      <p id="form-status" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Local Web Co. Built while learning full-stack dev in a day.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

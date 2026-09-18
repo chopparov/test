@@ -1,0 +1,211 @@
+/* ============================================
+   1. RESET & BOX MODEL
+   Every element's total size = content + padding + border.
+   box-sizing: border-box makes padding/border count INSIDE
+   the width you set, instead of adding to it. Use this always.
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #FAF9F6;
+  --color-text: #1D1D1B;
+  --color-primary: #1F5C4E;
+  --color-primary-light: #2E7D68;
+  --color-muted: #6B6B68;
+  --color-card-bg: #FFFFFF;
+  --font-body: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+/* ============================================
+   2. FLEXBOX — one-dimensional layout
+   Used here for the navbar: items placed in a row,
+   space distributed between the logo and links.
+   ============================================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;          /* flex again: puts list items in a row */
+  gap: 2rem;               /* modern spacing between flex items */
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.hero p {
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+}
+
+/* ============================================
+   3. CSS GRID — two-dimensional layout
+   Used here for the services cards: as many columns
+   as fit at 260px minimum, auto-wrapping to new rows.
+   This one line replaces what used to take a dozen
+   lines of float/clearfix hacks.
+   ============================================ */
+.services {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.services h2,
+.contact h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid #E5E3DD;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.card p {
+  color: var(--color-muted);
+}
+
+/* ============================================
+   CONTACT FORM
+   ============================================ */
+.contact {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 0 2rem 4rem;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;   /* flexbox works vertically too */
+  gap: 0.25rem;
+}
+
+#contact-form label {
+  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 0.65rem;
+  border: 1px solid #CFCDC6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#contact-form button {
+  margin-top: 1.5rem;
+}
+
+#form-status {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   4. RESPONSIVE DESIGN — media queries
+   Below 640px (most phones), stack the navbar links
+   and shrink the hero heading so nothing overflows.
+   ============================================ */
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}
